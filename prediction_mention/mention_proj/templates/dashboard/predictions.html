@@ -1,0 +1,38 @@
+{% extends 'partials/base.html' %}
+
+		{%block title %} List Predictions {%endblock%}
+
+		{% block content %}
+			<div class="container">
+				<div class="row mt-4">
+					<div class="col-md-8 offset-md-2">
+						
+						<table class="table">
+							<thead>
+							  <tr>
+								<th scope="col">Name</th>
+								<th scope="col">Maths</th>
+								<th scope="col">Français</th>
+								<th scope="col">philosophie</th>
+								<th scope="col">Physique</th>
+                                <th scope="col">Mention</th>
+							  </tr>
+							</thead>
+							<tbody>
+							  {% for data in predicted_mention%}
+							  <tr>
+								<th scope="row">{{data.name}}</th>
+								<td>{{data.maths}}</td>
+								<td>{{data.français}}</td>
+								<td>{{data.philosophie}}</td>
+								<td>{{data.physique}}</td>
+                                <td>{{data.mention}}</td>
+							  </tr>
+							  {% endfor %}
+							</tbody>
+						  </table>
+
+					</div>
+				</div>
+			</div>
+		{%endblock%}
